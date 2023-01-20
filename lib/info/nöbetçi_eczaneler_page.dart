@@ -11,7 +11,9 @@ class _EczanePageState extends State<EczanePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('dweewdwe'),
+      ),
     );
   }
 }
