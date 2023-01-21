@@ -15,17 +15,21 @@ class _InfoPageState extends State<InfoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white12,
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.phone),
+        leading: const BackButton(),
+        backgroundColor: Colors.lightGreen,
+        actions: [
+          Container(
+            color: Colors.white,
+            child: IconButton(
+              color: Colors.amber,
+              icon: const Icon(Icons.phone),
+              onPressed: () {},
+            ),
           )
         ],
       ),
       body: WebViewPlus(
         javascriptMode: JavascriptMode.unrestricted,
-        initialUrl: 'https://www.nilufer.bel.tr/haberler',
         onWebViewCreated: (controller) {
           this.controller = controller;
           controller.loadUrl('https://www.nilufer.bel.tr/haberler');
@@ -85,4 +89,8 @@ List<Map<String, dynamic>> data = const [
   // {'icon': 'assets/images/home.png'},
   // {'icon': 'assets/images/document.png'},
   // {'icon': 'assets/images/document.png'},
+];
+
+List<Map<String, dynamic>> link = [
+  {'link': 'https://www.nilufer.bel.tr/haberler'}
 ];
